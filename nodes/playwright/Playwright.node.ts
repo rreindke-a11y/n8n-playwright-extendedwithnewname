@@ -7,17 +7,17 @@ import { IBrowserOptions } from './types';
 import { installBrowser } from '../scripts/setup-browsers';
 import { BrowserType } from './config';
 
-export class Playwright implements INodeType {
+export class PlaywrightExt implements INodeType {
     description : INodeTypeDescription = {
-    displayName: 'Playwright',
-    name: 'playwright',
+    displayName: 'Playwright (EXT)',
+    name: 'playwrightExt',
     icon: 'file:playwright.svg',
     group: ['automation'],
     version: 1,
     subtitle: '={{$parameter["operation"]}}',
     description: 'Automate browser actions using Playwright',
     defaults: {
-        name: 'Playwright',
+        name: 'Playwright (EXT)',
     },
     // eslint-disable-next-line n8n-nodes-base/node-class-description-inputs-wrong-regular-node
     inputs: [
