@@ -1,7 +1,7 @@
-import { Playwright } from './nodes/playwright/Playwright.node';
+import { PlaywrightExt } from './nodes/playwright/Playwright.node';
 
-export { Playwright };
+export { PlaywrightExt };
 
 module.exports = {
-    Playwright: Playwright,
+    PlaywrightExt: PlaywrightExt,
 };
