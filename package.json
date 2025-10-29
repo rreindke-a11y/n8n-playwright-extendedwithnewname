@@ -1,22 +1,29 @@
 {
-  "name": "n8n-nodes-playwright-ext",
-  "version": "0.2.16",
-  "description": "n8n-community-node-package for browser automation using Playwright",
+  "name": "n8n-nodes-playwright-extendedwithnewname",
+  "version": "0.2.17",
+  "description": "Playwright (EXT) Community Node for n8n – browser automation with extended features",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n",
+    "n8n-community-node",
+    "automation",
+    "playwright",
+    "browser"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/DEIN-USER/n8n-nodes-playwright-extendedwithnewname#readme",
   "author": {
     "name": "Mohamed Toema",
     "email": "m.toema20@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/toema/n8n-playwright"
+    "url": "https://github.com/DEIN-USER/n8n-nodes-playwright-extendedwithnewname.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DEIN-USER/n8n-nodes-playwright-extendedwithnewname/issues"
   },
   "engines": {
-    "node": ">=18.10",
+    "node": ">=18.0.0",
     "pnpm": ">=9.1"
   },
   "packageManager": "pnpm@9.1.4",
@@ -25,25 +32,32 @@
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npm config set yes true && node dist/nodes/scripts/setup-browsers.js",
     "rebuild": "node dist/nodes/scripts/setup-browsers.js",
-    "setup": "npm config set yes true && node dist/nodes/scripts/setup-browsers.js ",
+    "setup": "npm config set yes true && node dist/nodes/scripts/setup-browsers.js",
     "test:setup": "ts-node scripts/test-setup.ts",
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes package.json --write",
     "lint": "eslint nodes package.json",
     "lintfix": "eslint nodes package.json --fix",
-    "prepublish": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes  package.json && npm version patch",
-    "publish": " npm publish --access public"
+    "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes package.json"
   },
   "files": [
     "dist",
-    "nodes/browsers"
+    "nodes/browsers",
+    "nodes/playwright/playwright.svg",
+    "setup-playwright.sh",
+    "dockerfile",
+    "docker-compose.yml",
+    "README.md",
+    "LICENSE.md",
+    "CODE_OF_CONDUCT.md"
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
     "nodes": [
       "dist/nodes/playwright/Playwright.node.js"
-    ]
+    ],
+    "credentials": []
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
@@ -53,7 +67,6 @@
     "eslint-plugin-n8n-nodes-base": "^1.16.1",
     "gulp": "^4.0.2",
     "n8n-workflow": "*",
-    "playwright": "^1.49.0",
     "prettier": "^3.3.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
