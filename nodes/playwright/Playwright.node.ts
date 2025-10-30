@@ -222,7 +222,8 @@ export class PlaywrightExt implements INodeType {
                 try {
                     executablePath = getBrowserExecutablePath(browserType, browsersPath);
                 } catch (error) {
-                    console.error(`Browser path error: ${error.message}`);
+                    const msg = error instanceof Error ? error.message : String(error);
+                    console.error(`Browser path error: ${msg}`);
                     // Try to install missing browser
                     await installBrowser(browserType);
                     executablePath = getBrowserExecutablePath(browserType, browsersPath);
@@ -250,7 +251,7 @@ export class PlaywrightExt implements INodeType {
                 if (this.continueOnFail()) {
                     returnData.push({
                         json: {
-                            error: error.message,
+                            error: error instanceof Error ? error.message : String(error),
                             browserType,
                             os: platform(),
                         },
