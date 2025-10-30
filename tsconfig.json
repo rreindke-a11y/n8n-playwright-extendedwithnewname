@@ -20,13 +20,10 @@
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "."
   },
   "include": [
-    "src/nodes/**/*",
-    "src/nodes/**/*.json",
-    "src/scripts/**/*.ts",
-    "src/types/**/*.d.ts"
+    "nodes/**/*"
   ],
   "exclude": [
     "dist",
